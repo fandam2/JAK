@@ -21,8 +21,8 @@ sudo apt-get install libnotify-dev -y
 sudo chmod +x tg
 lua JAK.lua
 sudo chmod +x JAK
-sudo chmod +x ./JK
-./JK
+sudo chmod +x ./BK
+./BK
 }
 if [ "$1" = "install" ]; then
 install
@@ -32,8 +32,8 @@ echo "Tg Is Not Found"
 exit 1
 fi
 sudo chmod +x tg
-lua DARK.lua
+lua JAK.lua
 sudo chmod +x JAK
-sudo chmod +x ./JK
-./JK
+sudo chmod +x ./BK
+./BK
 fi
