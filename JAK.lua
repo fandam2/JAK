@@ -93,18 +93,18 @@ echo -e "\033[38;5;208m"
 echo -e "                                                  "
 echo -e "\033[0;00m"
 echo -e "\e[36m"
-./tg -s ./DARK.lua -p PROFILE --bot=$token
+./tg -s ./JAK.lua -p PROFILE --bot=$token
 done
 ]])  
 file:close()  
-file = io.open("BK", "w")  
+file = io.open("JK", "w")  
 file:write([[
 #!/usr/bin/env bash
 cd $HOME/JAK
 while(true) do
 rm -fr ../.telegram-cli
-screen -S DARK -X kill
-screen -S DARK ./DARK
+screen -S JAK -X kill
+screen -S JAK ./JAK
 done
 ]])  
 file:close() 
@@ -164,7 +164,7 @@ io.popen("cd File_Bot && rm -rf commands.lua.3")
 io.popen("cd File_Bot && wget https://raw.githubusercontent.com/fandam2/JAK/master/File/commands.lua") 
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
-for v in io.popen('ls File_Bot'):lines() do
+for v in io.popen('ls File'):lines() do
 if v:match(".lua$") then
 i = i + 1
 t = t.."\27[39m"..i.."\27[36m".." - \27[10;32m"..v..",\27[m \n"
@@ -176,13 +176,13 @@ print(serpent.block(value, {comment=false}))
 end 
 sudo_users = {SUDO,759699162}
 function SudoBot(msg)  
-local DARK = false  
+local JAK = false  
 for k,v in pairs(sudo_users) do  
 if tonumber(msg.sender_user_id_) == tonumber(v) then  
-DARK = true  
+JAK = true  
 end  
 end  
-return DARK  
+return JAK  
 end 
 function Sudo(msg) 
 local hash = database:sismember(bot_id..'Sudo:User', msg.sender_user_id_) 
@@ -256,7 +256,7 @@ return var
 end 
 
 function Rutba(user_id,chat_id)
-if tonumber(user_id) == tonumber(759699162) then  
+if tonumber(user_id) == tonumber(114518657) then  
 var = 'مطور السورس'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
