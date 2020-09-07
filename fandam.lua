@@ -70,32 +70,32 @@ end
 DevStorm_Info_Sudo:close()
 ------------------------------------------------------------------------------------------------------------
 local Run_File_Storm = io.open("fandam", 'w')
-Run_File_Storm:write([[
+Run_File_fandam:write([[
 #!/usr/bin/env bash
-cd $HOME/Storm
+cd $HOME/fandam
 token="]]..redis:get(Server_DevStorm.."Token_DevStorm")..[["
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./Storm.lua -p PROFILE --bot=$token
+./tg -s ./fandam.lua -p PROFILE --bot=$token
 done
 ]])
-Run_File_Storm:close()
+Run_File_fandam:close()
 ------------------------------------------------------------------------------------------------------------
 local Run_SM = io.open("Run", 'w')
 Run_SM:write([[
 #!/usr/bin/env bash
-cd $HOME/Storm
+cd $HOME/fandam
 while(true) do
 rm -fr ../.telegram-cli
 screen -S DevStorm -X kill
-screen -S DevStorm ./Storm
+screen -S DevStorm ./fandam
 done
 ]])
 Run_SM:close()
 io.popen("mkdir Files")
 os.execute('chmod +x tg')
 os.execute('chmod +x Run')
-os.execute('chmod +x Storm')
+os.execute('chmod +x fandam')
 os.execute('./Run')
 Status = true
 else   
@@ -3456,7 +3456,7 @@ elseif text == ("تنزيل مميز") and tonumber(msg.reply_to_message_id_) ~=
 local url,res = https.request('https://teamstorm.tk/ch/?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.Info_Storm ~= true then
-send(msg.chat_id_,msg.id_,'\n📌┇عليك الاشتراك في قناة البوت \n💢┇قناة البوت ← { @Stormcli }')   
+send(msg.chat_id_,msg.id_,'\n??┇عليك الاشتراك في قناة البوت \n💢┇قناة البوت ← { @Stormcli }')   
 return false 
 end 
 function FunctionStatus(arg, result)
