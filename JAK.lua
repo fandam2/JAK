@@ -70,7 +70,7 @@ token = database:get(id_server..":token")
 SUDO = database:get(id_server..":SUDO:ID")
 install = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 print('\n\27[1;34m doneeeeeeee senddddddddddddd :')
-file = io.open("DARK", "w")  
+file = io.open("JAK", "w")  
 file:write([[
 #!/usr/bin/env bash
 cd $HOME/DARK
@@ -233,7 +233,7 @@ return false
 end 
 end
 function Can_or_NotCan(user_id,chat_id)
-if tonumber(user_id) == tonumber(759699162) then  
+if tonumber(user_id) == tonumber(114518657) then  
 var = true  
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = true  
